@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lk.gov.health.schoolhealth;
+package lk.gov.health.entities;
 
 /**
  *
  * @author User
  */
-public enum ReturnReceiveCategory {
-    Received_on_time,
-    Received_late,
-    Sent_yet_to_receive,
-    Not_Received;
+public enum AreaType {
+    PHM,
+    PHI,
+    MOH,
+    District,
+    Province,
+    National,
 }

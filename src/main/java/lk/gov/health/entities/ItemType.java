@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lk.gov.health.schoolhealth;
+package lk.gov.health.entities;
 
 /**
  *
  * @author User
  */
-public enum Sex {
-    Male,
-    Female,
-    Other,
+public enum ItemType {
+    Equipment,
+    Return_Category,
+    Return_Format_Category,
 }

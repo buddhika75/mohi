@@ -9,14 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
-import lk.gov.health.schoolhealth.AreaType;
-import lk.gov.health.schoolhealth.InstitutionType;
-import lk.gov.health.schoolhealth.ItemType;
-import lk.gov.health.schoolhealth.Month;
-import lk.gov.health.schoolhealth.PrivilegeType;
-import lk.gov.health.schoolhealth.Quarter;
-import lk.gov.health.schoolhealth.ReturnReceiveCategory;
-import lk.gov.health.schoolhealth.ReturnTimeFrequency;
+import lk.gov.health.entities.AreaType;
+import lk.gov.health.entities.InstitutionType;
+import lk.gov.health.entities.ItemType;
+import lk.gov.health.entities.Month;
+import lk.gov.health.entities.PrivilegeType;
+import lk.gov.health.entities.Quarter;
 
 /**
  *
@@ -44,9 +42,7 @@ public class EnumController {
         return AreaType.values();
     }
     
-    public ReturnReceiveCategory[] getReturnReceiveCategories(){
-        return ReturnReceiveCategory.values();
-    }
+
 
     public PrivilegeType[] getPrivilegeTypes() {
         return PrivilegeType.values();
@@ -59,9 +55,5 @@ public class EnumController {
     public ItemType[] getItemTypes() {
         return ItemType.values();
     }
-    
-    public ReturnTimeFrequency[] getReturnTimeFrequencys(){
-        return ReturnTimeFrequency.values();
-    }
-
+  
 }

@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lk.gov.health.schoolhealth;
+package lk.gov.health.entities;
 
 /**
  *
  * @author User
  */
-public enum AreaType {
-    PHM,
-    PHI,
-    MOH,
-    District,
-    Province,
-    National,
+public enum Quarter {
+    First,
+    Second,
+    Thired,
+    Forth,
 }

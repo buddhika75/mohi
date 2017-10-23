@@ -1,6 +1,6 @@
 package lk.gov.health.beans;
 
-import lk.gov.health.schoolhealth.Institution;
+import lk.gov.health.entities.Institution;
 import lk.gov.health.beans.util.JsfUtil;
 import lk.gov.health.beans.util.JsfUtil.PersistAction;
 import lk.gov.health.faces.InstitutionFacade;
@@ -21,8 +21,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Named;
-import lk.gov.health.schoolhealth.Area;
-import lk.gov.health.schoolhealth.InstitutionType;
+import lk.gov.health.entities.Area;
+import lk.gov.health.entities.InstitutionType;
 
 @Named
 @SessionScoped
