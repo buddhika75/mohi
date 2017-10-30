@@ -65,7 +65,7 @@ public class WebUserController implements Serializable {
     private WebUser loggedUser;
     private PrivilegeType loggedPrivilegeType;
     private boolean logged;
-    private boolean developmentStage = false;
+    private boolean developmentStage = true;
 
     private String userName;
     private String password;
@@ -176,8 +176,24 @@ public class WebUserController implements Serializable {
     public String login() {
         makeAllLoggedVariablesNull();
         if (developmentStage) {
-            loggedUser = new WebUser();
-            loggedUser.setType(PrivilegeType.System_Administrator);
+            String j;
+            Map m = new HashMap();
+            j = "select w from WebUser w "
+                    + " where upper(w.userName) = :un "
+                    + " and w.password=:pw "
+                    + " order by w.id desc";
+            m.put("un", userName.trim().toUpperCase());
+            m.put("pw", password);
+            loggedUser = getFacade().findFirstBySQL(j, m);
+            if (loggedUser == null) {
+                loggedUser = new WebUser();
+                loggedUser.setUserName(userName);
+                loggedUser.setPassword(password);
+                loggedUser.setType(PrivilegeType.System_Administrator);
+                getFacade().create(selected);
+                JsfUtil.addSuccessMessage("Wrong login details, please retry!");
+                return "";
+            }
         } else {
             String j;
             Map m = new HashMap();
@@ -329,6 +345,9 @@ public class WebUserController implements Serializable {
     }
 
     public boolean isAdmin() {
+        if(developmentStage){
+            return true;
+        }
         if (loggedPrivilegeType == null) {
             return false;
         }
